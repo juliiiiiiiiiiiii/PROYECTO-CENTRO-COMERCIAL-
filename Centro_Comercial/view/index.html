@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Centro Comercial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container my-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-white rounded shadow-sm">
+            <h3 class="m-0 text-primary fw-bold">Centro Comercial</h3>
+            <div>
+                <button class="btn btn-primary me-2" onclick="mostrarPagina('ventas')">Página de Ventas</button>
+                <button class="btn btn-dark" onclick="mostrarPagina('admin')">Página Administrador</button>
+            </div>
+        </div>
+
+        <div id="pagina-ventas">
+            <h4 class="mb-3">Registro de Ventas</h4>
+            <div id="contenedor-pisos"></div>
+        </div>
+
+        <div id="pagina-admin" class="d-none">
+            <h4 class="mb-3">Consultas del Administrador</h4>
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm border-primary">
+                        <h6>Total recolectado en todo el C.C.</h6>
+                        <h3 class="text-primary fw-bold" id="total-cc">$0</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm border-success">
+                        <h6>Local con MAYOR venta</h6>
+                        <h5 class="text-success fw-bold mb-0" id="mayor-local">-</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm border-danger">
+                        <h6>Local con MENOR venta</h6>
+                        <h5 class="text-danger fw-bold mb-0" id="menor-local">-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-4 shadow-sm" style="max-width: 500px;">
+                <h5>Consultar ventas de un local con ID</h5>
+                <div class="d-flex gap-2 mb-3">
+                    <input type="text" id="input-id-buscar" class="form-control" placeholder="Escribe el ID (ej: P1L1)">
+                    <button class="btn btn-primary" onclick="buscarPorId()">Buscar</button>
+                </div>
+                <div id="resultado-busqueda" class="fw-bold text-secondary"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
